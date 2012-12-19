@@ -4,7 +4,14 @@ function fibonacci($x) {
     if ($x < 2) {
         return 1;
     } else {
-        return fibonacci($x-1) + fibonacci($x-2);
+        $p1 = 1;
+        $p2 = 1;
+        for ($i = 1; $i < $x; $i++) {
+            $result = $p1 + $p2;
+            $p1 = $p2;
+            $p2 = $result;
+        }
+        return $p2;
     }
 }
 
