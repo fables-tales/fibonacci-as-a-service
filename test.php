@@ -15,11 +15,14 @@ class FibTest extends PHPUnit_Framework_TestCase
 
     public function testLargeFib() {
         $expected = 9227465;
-        $start = time();
+        $start    = time();
         $result   = fibonacci(34);
-        $end = time();
-        $delta = $end-$start;
+        $end      = time();
+        $delta    = $end-$start;
+
+        //correctness
         $this->assertEquals($result, $expected);
+        //performance
         $this->assertLessThan(1, $delta, "Expected computation to take less than 1 second, it took $delta seconds");
     }
 }
